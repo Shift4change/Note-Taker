@@ -3,6 +3,10 @@ var $noteText = $(".note-textarea");
 var $saveNoteBtn = $(".save-note");
 var $newNoteBtn = $(".new-note");
 var $noteList = $(".list-container .list-group");
+let load = document.getElementById ("load")
+load.onclick = function(){
+window.location.reload()
+}
 
 // activeNote is used to keep track of the note in the textarea
 var activeNote = {};
