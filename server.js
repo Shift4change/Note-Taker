@@ -45,7 +45,7 @@ app.post("/api/notes", function(req, res) {
     });
 
   //delete new note:
-  app.delete("/api/notes/:id",function(req,res)  {
+  app.delete("/api/notes/:id",(req,res) => {
     var chosen = parseInt(req.params.id);
     for (var i = 0; i < db.length; i++) {
         if (chosen === db[i].id) {
@@ -55,7 +55,7 @@ app.post("/api/notes", function(req, res) {
             db[i].id = 1 + i;
         }
     }
-     fs.writeFile("./db/db.json", JSON.stringify(db), 'utf8',function(err) {
+     fs.writeFile("./db/db.json", JSON.stringify(db),(err) => {
         if (err) {
             throw err;
         }
